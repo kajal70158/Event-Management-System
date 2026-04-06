@@ -1,0 +1,219 @@
+.event-pass-wrapper {
+    padding: 20px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+.event-pass {
+    display: flex;
+    max-width: 650px;
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    color: #1a1a2e;
+}
+
+/* Left Info Section */
+.pass-left {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pass-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.pass-brand {
+    font-weight: 800;
+    color: #6366f1;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+}
+
+.pass-status {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.pass-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: #0f172a;
+}
+
+.pass-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.detail-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.detail-icon {
+    color: #6366f1;
+    margin-top: 2px;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+}
+
+.detail-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.pass-attendee-info {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px dashed #cbd5e1;
+}
+
+.attendee-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.attendee-email {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.attendee-count {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #6366f1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: flex-end;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Right QR Code Section */
+.pass-right {
+    width: 200px;
+    background: #f8fafc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border-left: 2px dashed #cbd5e1;
+}
+
+/* Perforated edge effect */
+.pass-right::before,
+.pass-right::after {
+    content: '';
+    position: absolute;
+    left: -16px;
+    width: 30px;
+    height: 30px;
+    background: #11111b; /* Matches dark body bg */
+    border-radius: 50%;
+}
+
+.pass-right::before {
+    top: -15px;
+}
+
+.pass-right::after {
+    bottom: -15px;
+}
+
+.qr-container {
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.pass-id {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.pass-hint {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .event-pass {
+        flex-direction: column;
+    }
+
+    .pass-right {
+        width: 100%;
+        border-left: none;
+        border-top: 2px dashed #cbd5e1;
+        padding: 40px 20px;
+    }
+
+    .pass-right::before,
+    .pass-right::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .pass-right::before {
+        top: -16px;
+        left: -15px;
+        transform: none;
+    }
+
+    .pass-right::after {
+        top: -16px;
+        left: auto;
+        right: -15px;
+        bottom: auto;
+        transform: none;
+    }
+}
